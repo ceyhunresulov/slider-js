@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#images {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  transition: all ease 0.5s;
+}
+.image-box {
+  width: 100vw;
+  height: 100%;
+}
+.image {
+  height: 100%;
+  width: 100%;
+}
+
+.far {
+  font-size: 8px;
+  font-weight: 100;
+  color: white;
+  position: absolute;
+  top: -10px;
+  animation: snow 7s linear infinite;
+}
+#arrow-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.arrow-btn {
+  font-size: 2rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#left-btn {
+  cursor: not-allowed;
+}
+.title-box {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+.title {
+  color: white;
+  font-size: 2rem;
+}
+@keyframes snow {
+  to {
+    transform: translateY(100vh);
+  }
+}

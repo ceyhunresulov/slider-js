@@ -12,16 +12,18 @@ rightBtn.addEventListener("click", leftScroll);
 
 function createSnowIconInContainer() {
   const container = document.getElementById("container");
-  const far = document.createElement("i");
-  far.classList.add("far");
-  far.classList.add("fa-snowflake");
-  far.style.left = `${Math.floor(Math.random() * window.innerWidth)}px`;
-  far.style.top = `${-Math.floor(Math.random() * 100)}px`;
-  far.style.fontSize = `${Math.floor(Math.random() * 7)}px`;
-  container.appendChild(far);
-  setTimeout(() => {
-    far.remove();
-  }, 7000);
+  for (let i = 0; i < 5; i++) {
+    const far = document.createElement("i");
+    far.classList.add("far");
+    far.classList.add("fa-snowflake");
+    far.style.left = `${Math.floor(Math.random() * window.innerWidth)}px`;
+    far.style.top = `${-Math.floor(Math.random() * 100)}px`;
+    far.style.fontSize = `${Math.floor(Math.random() * 7)}px`;
+    container.appendChild(far);
+    setTimeout(() => {
+      far.remove();
+    }, 7000);
+  }
 }
 setInterval(createSnowIconInContainer, 60);
 

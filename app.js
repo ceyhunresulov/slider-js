@@ -23,11 +23,14 @@ function createSnowIconInContainer() {
     far.remove();
   }, 7000);
 }
-setInterval(createSnowIconInContainer, 1);
+setInterval(createSnowIconInContainer, 60);
+
+let clickedCount = 0;
 
 function rightScroll() {
+  clickedCount -= 1;
   if (images.offsetLeft < 0) {
-    images.style.left = `${images.offsetLeft + window.innerWidth}px`;
+    images.style.left = `${clickedCount * -window.innerWidth}px`;
   } else {
     leftBtn.style.cursor = "not-allowed";
   }
@@ -36,8 +39,9 @@ function rightScroll() {
 }
 
 function leftScroll() {
+  clickedCount += 1;
   if (window.innerWidth * (images.children.length - 1) > -images.offsetLeft) {
-    images.style.left = `${images.offsetLeft - window.innerWidth}px`;
+    images.style.left = `${clickedCount * -window.innerWidth}px`;
   } else {
     rightBtn.style.cursor = "not-allowed";
   }

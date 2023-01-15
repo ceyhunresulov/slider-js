@@ -28,8 +28,8 @@ setInterval(createSnowIconInContainer, 60);
 let clickedCount = 0;
 
 function rightScroll() {
-  clickedCount -= 1;
-  if (images.offsetLeft < 0) {
+  if (clickedCount > 0) {
+    clickedCount -= 1;
     images.style.left = `${clickedCount * -window.innerWidth}px`;
   } else {
     leftBtn.style.cursor = "not-allowed";
@@ -39,8 +39,8 @@ function rightScroll() {
 }
 
 function leftScroll() {
-  clickedCount += 1;
-  if (window.innerWidth * (images.children.length - 1) > -images.offsetLeft) {
+  if (clickedCount < images.children.length - 1) {
+    clickedCount += 1;
     images.style.left = `${clickedCount * -window.innerWidth}px`;
   } else {
     rightBtn.style.cursor = "not-allowed";
